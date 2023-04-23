@@ -1,0 +1,13 @@
+C:\Users\Manuel\source\repos\Reproductor_Medios\bin\Debug\Reproductor_Medios.exe.config
+C:\Users\Manuel\source\repos\Reproductor_Medios\bin\Debug\Reproductor_Medios.exe
+C:\Users\Manuel\source\repos\Reproductor_Medios\bin\Debug\Reproductor_Medios.pdb
+C:\Users\Manuel\source\repos\Reproductor_Medios\obj\Debug\Reproductor_Medios.csproj.AssemblyReference.cache
+C:\Users\Manuel\source\repos\Reproductor_Medios\obj\Debug\Reproductor_Medios.csproj.SuggestedBindingRedirects.cache
+C:\Users\Manuel\source\repos\Reproductor_Medios\obj\Debug\Reproductor_Medios.PanelLateral.resources
+C:\Users\Manuel\source\repos\Reproductor_Medios\obj\Debug\Reproductor_Medios.Properties.Resources.resources
+C:\Users\Manuel\source\repos\Reproductor_Medios\obj\Debug\Reproductor_Medios.csproj.GenerateResource.cache
+C:\Users\Manuel\source\repos\Reproductor_Medios\obj\Debug\Reproductor_Medios.csproj.CoreCompileInputs.cache
+C:\Users\Manuel\source\repos\Reproductor_Medios\obj\Debug\Reproductor_Medios.exe
+C:\Users\Manuel\source\repos\Reproductor_Medios\obj\Debug\Reproductor_Medios.pdb
+C:\Users\Manuel\source\repos\Reproductor_Medios\obj\Debug\Reproductor_Medios.Form2.resources
+C:\Users\Manuel\source\repos\Reproductor_Medios\obj\Debug\Reproductor_Medios.Form3.resources
