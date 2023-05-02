@@ -15,9 +15,13 @@ namespace Reproductor_Medios
 {
     public partial class Form2 : Form
     {
+        private PanelLateral form1Instance;
         public Form2()
         {
+       
             InitializeComponent();
+            trackBar1.Value = 50;
+            axWindowsMediaPlayer1.uiMode = "none";
             slider.Height = 30;
         }
 
@@ -27,33 +31,31 @@ namespace Reproductor_Medios
         {
             this.Close();
         }
-
+        String[] paths, files;
         String urlSonido;
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                openFileDialog1.Title = "Elige la canción que quieras :)";
-                openFileDialog1.Filter = "Archivos MP3|*.mp3";
-                openFileDialog1.ShowDialog();
-                string Texto = openFileDialog1.FileName;
-                if (File.Exists(openFileDialog1.FileName))
-                {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Multiselect = true;
+     
+            openFileDialog1.Title = "Elige la canción que quieras :)";
+            openFileDialog1.Filter = "Archivos MP3|*.mp3";
 
-                    string nombreArchivo = Path.GetFileName(Texto); // Extraer el nombre del archivo de la ruta completa
-                 //   rtxt_Contenido.Text = "Nombre del archivo: " + nombreArchivo; // Mostrar solo el nombre del archivo
-                    txt_Direccion.Text = Texto;
-                    urlSonido = Texto;
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
+                files = openFileDialog1.FileNames;
+                paths = openFileDialog1.FileNames;
 
-
+                for (int i = 0; i < files.Length; i++) { 
+                
+                    track_list.Items.Add(files[i]);
                 }
-                txt_Direccion.Text = Texto;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al abrir: " + ex.Message);
+
+
+
             }
         }
+
+       
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -77,8 +79,7 @@ namespace Reproductor_Medios
                 sonido = new WindowsMediaPlayer();
                 sonido.URL = urlSonido;
                 sonido.controls.play();
-
-
+                
             }
             catch (Exception ex)
             {
@@ -88,6 +89,19 @@ namespace Reproductor_Medios
             }
         }
 
+        public void PauseMusic() {
+            sonido = new WindowsMediaPlayer();
+            sonido.controls.pause();
+            
+        }
+
+        public void ResumeMusic()
+        {
+
+            sonido = new WindowsMediaPlayer();
+            sonido.controls.play();
+
+        }
         private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
         {
 
@@ -104,6 +118,184 @@ namespace Reproductor_Medios
         }
 
         private void lbl_start_Click(object sender, EventArgs e)
+        {
+
+        }
+        bool reproduciendo = false;
+       
+        private void track_list_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+          
+                axWindowsMediaPlayer1.URL = paths[track_list.SelectedIndex];
+                axWindowsMediaPlayer1.Ctlcontrols.play();
+            pictureBox1.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\pausemini.png");
+            reproduciendo = true;
+            try
+            {
+                var file = TagLib.File.Create(paths[track_list.SelectedIndex]);
+                if (file.Tag.Pictures.Length > 0)
+                {
+                    var bin = (byte[])(file.Tag.Pictures[0].Data.Data);
+                    miniatura.Image = Image.FromStream(new MemoryStream(bin));
+                }
+                else
+                {
+                    miniatura.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\musiquita.png"); // load a default picture
+                }
+            }
+            catch
+            {
+                miniatura.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\musiquita.png"); // load a default picture on error
+            }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.Ctlcontrols.stop();
+            
+        }
+
+        
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+            if (!reproduciendo )
+            {
+                pictureBox1.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\pausemini.png");
+
+                axWindowsMediaPlayer1.Ctlcontrols.play();
+                reproduciendo = true;
+              
+
+            }
+            else
+            {
+                pictureBox1.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\icon.png");
+                axWindowsMediaPlayer1.Ctlcontrols.pause();
+                reproduciendo = false;
+             
+            }
+
+
+            
+            
+        }
+
+        float valores_default = 0.1f, Min = 0.0f, Max = 1.0f;
+
+        public float Bar(float value)
+        {
+
+            return (slider.Width - 24) * (value - Min) / (float)(Max - Min);
+
+        }
+
+        private void slider_Paint(object sender, PaintEventArgs e)
+        {
+            float bar_size = 0.3f;
+            float x = Bar(valores_default);
+            int y = (int)(slider.Height * bar_size);
+            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+            e.Graphics.FillRectangle(Brushes.WhiteSmoke, 0, y, slider.Width, y / 2);
+            e.Graphics.FillRectangle(Brushes.DarkRed, 0, y, x, slider.Height - 30);
+            using (Pen pen = new Pen(Color.FromArgb(235, 5, 75), 8))
+            {
+
+                e.Graphics.DrawEllipse(pen, x + 4, y - 2, slider.Height / 4, slider.Height / 4);
+            }
+
+        }
+
+        bool mouse = false;
+        public void thumb(float value)
+        {
+
+            if (value < Min) value = Min;
+            if (value > Max) value = Max;
+            valores_default = value;
+            slider.Refresh();
+        }
+
+        public float slider_width(int x)
+        {
+            return Min + (Max - Min) * x / (float)(slider.Width);
+        }
+        private void slider_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouse = true;
+            thumb(slider_width(e.X));
+            axWindowsMediaPlayer1.Ctlcontrols.currentPosition = axWindowsMediaPlayer1.currentMedia.duration * e.X / slider.Width;
+
+
+        }
+
+        private void slider_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (!mouse) return;
+            thumb(slider_width(e.X));
+            axWindowsMediaPlayer1.Ctlcontrols.currentPosition = axWindowsMediaPlayer1.currentMedia.duration * e.X / slider.Width;
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            if (track_list.SelectedIndex<track_list.Items.Count - 1){
+
+                track_list.SelectedIndex = track_list.SelectedIndex +1;
+            }
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            if (track_list.SelectedIndex >0)
+            {
+
+                track_list.SelectedIndex = track_list.SelectedIndex - 1;
+            }
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.settings.volume = trackBar1.Value;
+            if (trackBar1.Value == 0)
+            {
+                botonVolumen.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\minimute.png");
+
+            }
+            else {
+
+                botonVolumen.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\reduced-volume.png");
+            }
+        }
+
+        private void botonVolumen_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void slider_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouse = false;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsPlaying)
+            {
+                Max = (int)axWindowsMediaPlayer1.Ctlcontrols.currentItem.duration;
+                valores_default = (int)axWindowsMediaPlayer1.Ctlcontrols.currentPosition;
+                slider.Invalidate();
+                lbl_start.Text = axWindowsMediaPlayer1.Ctlcontrols.currentPositionString;
+                lbl_end.Text = axWindowsMediaPlayer1.Ctlcontrols.currentItem.durationString;
+            }
+        }
+
+        private void axWindowsMediaPlayer1_Enter_1(object sender, EventArgs e)
         {
 
         }

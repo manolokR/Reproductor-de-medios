@@ -12,8 +12,12 @@ namespace Reproductor_Medios
 {
     public partial class PanelLateral : Form
     {
+
+        private Form2 form2Instance;
+        
         public PanelLateral()
         {
+            form2Instance = new Form2();
             InitializeComponent();
             personalizarDisenio();
         }
@@ -187,34 +191,9 @@ namespace Reproductor_Medios
         }
 
         private bool estaReproduciendo = false;
-        private void botonPlay_Click(object sender, EventArgs e)
-        {
-            if (!estaReproduciendo)
-            {
-                botonPlay.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\icon.png");
-                estaReproduciendo = true;
-            }
-            else
-            {
-                botonPlay.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\pausemini.png");
-                estaReproduciendo = false;
-            }
-        }
 
-        private bool estaMuted = false;
-        private void botonVolumen_Click(object sender, EventArgs e)
-        {
-            if (!estaReproduciendo)
-            {
-                botonVolumen.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\reduced-volume.png");
-                estaReproduciendo = true;
-            }
-            else
-            {
-                botonVolumen.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\minimute.png");
-                estaReproduciendo = false;
-            }
-        }
+        
+       
 
         private void panelMedios_Paint(object sender, PaintEventArgs e)
         {

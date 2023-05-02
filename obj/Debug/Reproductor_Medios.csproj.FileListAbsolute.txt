@@ -17,3 +17,5 @@ C:\Users\Manuel\source\repos\Reproductor_Medios\bin\Debug\AxInterop.WMPLib.dll
 C:\Users\Manuel\source\repos\Reproductor_Medios\obj\Debug\Interop.WMPLib.dll
 C:\Users\Manuel\source\repos\Reproductor_Medios\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\Manuel\source\repos\Reproductor_Medios\obj\Debug\Reproductor_Medios.csproj.ResolveComReference.cache
+C:\Users\Manuel\source\repos\Reproductor_Medios\bin\Debug\taglib-sharp.dll
+C:\Users\Manuel\source\repos\Reproductor_Medios\obj\Debug\Reproductor_Medios.csproj.CopyComplete

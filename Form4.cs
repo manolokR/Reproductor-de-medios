@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
 using System.Drawing.Drawing2D;
 namespace Reproductor_Medios
 {
@@ -15,6 +16,7 @@ namespace Reproductor_Medios
         public Form4()
         {
             InitializeComponent();
+        
             axWindowsMediaPlayer1.uiMode = "none";
             slider.Height = 30;
         }
@@ -75,7 +77,8 @@ namespace Reproductor_Medios
             float x = Bar(valores_default);
             int y = (int)(slider.Height * bar_size);
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-            e.Graphics.FillRectangle(Brushes.WhiteSmoke, 0, y, slider.Width, y / 2);
+            e.Graphics.FillRectangle(Brushes.WhiteSmoke, 0, y, slider.Width-7, y / 2);
+            e.Graphics.FillRectangle(Brushes.DarkRed, 0, y, x, slider.Height - 30);
             using (Pen pen = new Pen(Color.FromArgb(235,5, 75), 8)) {
 
                 e.Graphics.DrawEllipse(pen, x + 4, y - 2, slider.Height / 4, slider.Height / 4);
@@ -84,6 +87,20 @@ namespace Reproductor_Medios
         }
 
         bool mouse = false;
+
+
+        public void thumb(float value)
+        {
+
+            if (value < Min) value = Min;
+            if (value > Max) value = Max;
+            valores_default = value;
+            slider.Refresh();
+        }
+        public float slider_width(int x)
+        {
+            return Min + (Max - Min) * x / (float)(slider.Width);
+        }
 
         private void slider_MouseDown(object sender, MouseEventArgs e)
         {
@@ -107,6 +124,8 @@ namespace Reproductor_Medios
             mouse = false;
         }
 
+     
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (axWindowsMediaPlayer1.playState==WMPLib.WMPPlayState.wmppsPlaying) {
@@ -118,17 +137,15 @@ namespace Reproductor_Medios
             }
         }
 
-        public void thumb(float value) {
+        private void Form4_Load(object sender, EventArgs e)
+        {
 
-            if (value < Min) value = Min;
-            if (value > Max) value = Max;
-            valores_default = value;
-            slider.Refresh();
         }
 
-        public float slider_width(int x) {
-            return Min + (Max - Min) * x / (float)(slider.Width);
-        }
+       
+       
 
+
+       
     }
 }
