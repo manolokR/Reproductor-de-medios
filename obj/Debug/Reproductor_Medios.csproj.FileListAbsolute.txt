@@ -11,3 +11,9 @@ C:\Users\Manuel\source\repos\Reproductor_Medios\obj\Debug\Reproductor_Medios.exe
 C:\Users\Manuel\source\repos\Reproductor_Medios\obj\Debug\Reproductor_Medios.pdb
 C:\Users\Manuel\source\repos\Reproductor_Medios\obj\Debug\Reproductor_Medios.Form2.resources
 C:\Users\Manuel\source\repos\Reproductor_Medios\obj\Debug\Reproductor_Medios.Form3.resources
+C:\Users\Manuel\source\repos\Reproductor_Medios\obj\Debug\Reproductor_Medios.Form4.resources
+C:\Users\Manuel\source\repos\Reproductor_Medios\bin\Debug\Interop.WMPLib.dll
+C:\Users\Manuel\source\repos\Reproductor_Medios\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Manuel\source\repos\Reproductor_Medios\obj\Debug\Interop.WMPLib.dll
+C:\Users\Manuel\source\repos\Reproductor_Medios\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Manuel\source\repos\Reproductor_Medios\obj\Debug\Reproductor_Medios.csproj.ResolveComReference.cache

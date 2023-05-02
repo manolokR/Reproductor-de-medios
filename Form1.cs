@@ -84,6 +84,7 @@ namespace Reproductor_Medios
 
         private void button3_Click(object sender, EventArgs e)
         {
+            abrirpanelPrincipal(new Form4());
             ocultarMenuLateral();
         }
 
@@ -181,6 +182,46 @@ namespace Reproductor_Medios
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private bool estaReproduciendo = false;
+        private void botonPlay_Click(object sender, EventArgs e)
+        {
+            if (!estaReproduciendo)
+            {
+                botonPlay.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\icon.png");
+                estaReproduciendo = true;
+            }
+            else
+            {
+                botonPlay.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\pausemini.png");
+                estaReproduciendo = false;
+            }
+        }
+
+        private bool estaMuted = false;
+        private void botonVolumen_Click(object sender, EventArgs e)
+        {
+            if (!estaReproduciendo)
+            {
+                botonVolumen.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\reduced-volume.png");
+                estaReproduciendo = true;
+            }
+            else
+            {
+                botonVolumen.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\minimute.png");
+                estaReproduciendo = false;
+            }
+        }
+
+        private void panelMedios_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelPrincipal_Paint(object sender, PaintEventArgs e)
         {
 
         }
