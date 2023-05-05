@@ -39,7 +39,8 @@ namespace Reproductor_Medios
             
         }
 
-        private void mostrarMenuLateral(Panel menuLateral) {
+        private void mostrarMenuLateral(Panel menuLateral)
+        {
 
             if (menuLateral.Visible == false)
             {
@@ -47,7 +48,8 @@ namespace Reproductor_Medios
                 menuLateral.Visible = true;
 
             }
-            else {
+            else
+            {
 
                 menuLateral.Visible = false;
             }
@@ -135,7 +137,7 @@ namespace Reproductor_Medios
 
         private void botonAyuda_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Apruebanos, último aviso");
+            abrirpanelPrincipal(new Form3());
         }
 
 
@@ -161,7 +163,7 @@ namespace Reproductor_Medios
 
         private void botonEcualizador_Click(object sender, EventArgs e)
         {
-            abrirpanelPrincipal(new Form3());
+           
 
             ocultarMenuLateral();
         }
@@ -182,6 +184,11 @@ namespace Reproductor_Medios
         }
 
         private void panelPrincipal_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

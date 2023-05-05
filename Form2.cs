@@ -379,6 +379,11 @@ namespace Reproductor_Medios
             }
         }
 
+        private void axWindowsMediaPlayer1_Enter_2(object sender, EventArgs e)
+        {
+
+        }
+
         private void slider_MouseUp(object sender, MouseEventArgs e)
         {
             mouse = false;

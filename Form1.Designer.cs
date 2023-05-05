@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PanelLateral));
             this.panel1 = new System.Windows.Forms.Panel();
             this.botonAyuda = new System.Windows.Forms.Button();
-            this.botonEcualizador = new System.Windows.Forms.Button();
             this.panelMedios = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -40,6 +39,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelPrincipal = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panelMedios.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -53,7 +53,6 @@
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.panel1.Controls.Add(this.botonAyuda);
-            this.panel1.Controls.Add(this.botonEcualizador);
             this.panel1.Controls.Add(this.panelMedios);
             this.panel1.Controls.Add(this.botonMedia);
             this.panel1.Controls.Add(this.panelLogo);
@@ -71,7 +70,7 @@
             this.botonAyuda.ForeColor = System.Drawing.Color.Gainsboro;
             this.botonAyuda.Image = ((System.Drawing.Image)(resources.GetObject("botonAyuda.Image")));
             this.botonAyuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botonAyuda.Location = new System.Drawing.Point(0, 276);
+            this.botonAyuda.Location = new System.Drawing.Point(0, 231);
             this.botonAyuda.Name = "botonAyuda";
             this.botonAyuda.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.botonAyuda.Size = new System.Drawing.Size(250, 45);
@@ -81,25 +80,6 @@
             this.botonAyuda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.botonAyuda.UseVisualStyleBackColor = true;
             this.botonAyuda.Click += new System.EventHandler(this.botonAyuda_Click);
-            // 
-            // botonEcualizador
-            // 
-            this.botonEcualizador.Dock = System.Windows.Forms.DockStyle.Top;
-            this.botonEcualizador.FlatAppearance.BorderSize = 0;
-            this.botonEcualizador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonEcualizador.ForeColor = System.Drawing.Color.Gainsboro;
-            this.botonEcualizador.Image = ((System.Drawing.Image)(resources.GetObject("botonEcualizador.Image")));
-            this.botonEcualizador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botonEcualizador.Location = new System.Drawing.Point(0, 231);
-            this.botonEcualizador.Name = "botonEcualizador";
-            this.botonEcualizador.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.botonEcualizador.Size = new System.Drawing.Size(250, 45);
-            this.botonEcualizador.TabIndex = 5;
-            this.botonEcualizador.Text = "Ecualizador";
-            this.botonEcualizador.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botonEcualizador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.botonEcualizador.UseVisualStyleBackColor = true;
-            this.botonEcualizador.Click += new System.EventHandler(this.botonEcualizador_Click);
             // 
             // panelMedios
             // 
@@ -196,10 +176,11 @@
             // panelPrincipal
             // 
             this.panelPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.panelPrincipal.Controls.Add(this.textBox1);
             this.panelPrincipal.Controls.Add(this.pictureBox1);
             this.panelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPrincipal.Location = new System.Drawing.Point(250, 0);
-            this.panelPrincipal.MinimumSize = new System.Drawing.Size(684, 561);
+            this.panelPrincipal.MinimumSize = new System.Drawing.Size(1084, 793);
             this.panelPrincipal.Name = "panelPrincipal";
             this.panelPrincipal.Size = new System.Drawing.Size(1084, 793);
             this.panelPrincipal.TabIndex = 2;
@@ -212,13 +193,29 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(142, 50);
+            this.pictureBox1.Location = new System.Drawing.Point(233, 44);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(808, 691);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.Size = new System.Drawing.Size(577, 540);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.SystemColors.Menu;
+            this.textBox1.Location = new System.Drawing.Point(251, 590);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(787, 178);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.Text = "Media Master\r\nExperimenta la música";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // PanelLateral
             // 
@@ -239,6 +236,7 @@
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelPrincipal.ResumeLayout(false);
+            this.panelPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -253,10 +251,10 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button botonMedia;
         private System.Windows.Forms.Button botonAyuda;
-        private System.Windows.Forms.Button botonEcualizador;
         private System.Windows.Forms.Panel panelPrincipal;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
