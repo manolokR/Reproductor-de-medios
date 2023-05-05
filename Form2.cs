@@ -57,10 +57,7 @@ namespace Reproductor_Medios
 
        
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -126,8 +123,8 @@ namespace Reproductor_Medios
         private void track_list_SelectedIndexChanged_1(object sender, EventArgs e)
         {
           
-                axWindowsMediaPlayer1.URL = paths[track_list.SelectedIndex];
-                axWindowsMediaPlayer1.Ctlcontrols.play();
+            axWindowsMediaPlayer1.URL = paths[track_list.SelectedIndex];
+            axWindowsMediaPlayer1.Ctlcontrols.play();
             pictureBox1.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\pausemini.png");
             reproduciendo = true;
             try
@@ -147,6 +144,7 @@ namespace Reproductor_Medios
             {
                 miniatura.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\musiquita.png"); // load a default picture on error
             }
+            pictureBox2.Enabled = true;
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -157,20 +155,22 @@ namespace Reproductor_Medios
         private void pictureBox6_Click(object sender, EventArgs e)
         {
             axWindowsMediaPlayer1.Ctlcontrols.stop();
-            
+            pictureBox1.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\icon.png");
+            reproduciendo = false;
+
         }
 
         
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+           
             if (!reproduciendo )
             {
                 pictureBox1.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\pausemini.png");
-
+                axWindowsMediaPlayer1.URL = @listBox1.Text;
                 axWindowsMediaPlayer1.Ctlcontrols.play();
                 reproduciendo = true;
-              
+                
 
             }
             else
@@ -276,6 +276,83 @@ namespace Reproductor_Medios
         private void botonVolumen_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void loadPlaylist_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            pictureBox2.Enabled = false;
+            listBox1.Items.Add(track_list.Text);
+            
+
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            track_list.Text = listBox1.Text;
+        }
+
+       
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Guardar_Click(object sender, EventArgs e)
+        {
+            StreamWriter Guardar = new StreamWriter(@"C:\Users\Manuel\source\repos\Reproductor_Medios\Almacenamiento\Favoritos.txt");
+            foreach (var item in listBox1.Items) { 
+               
+                Guardar.WriteLine(item.ToString());
+                this.Refresh();
+            }
+            MessageBox.Show("Añadido a favoritos");
+            Guardar.Close();    
+            listBox1.Items.Clear();
+            
+        }
+
+        private void Cargar_Click(object sender, EventArgs e)
+        {
+            using (StreamReader leer = new StreamReader(@"C:\Users\Manuel\source\repos\Reproductor_Medios\Almacenamiento\Favoritos.txt")) 
+            {
+                string linea;
+                while ((linea = leer.ReadLine()) != null) { 
+                
+                    listBox1.Items.Add (linea);
+                }
+            
+            }
+        
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void delete_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedItems.Count > 0) {
+
+                listBox1.Items.Remove(listBox1.SelectedItems[0]);
+            }
         }
 
         private void slider_MouseUp(object sender, MouseEventArgs e)

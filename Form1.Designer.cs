@@ -31,13 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PanelLateral));
             this.panel1 = new System.Windows.Forms.Panel();
             this.botonAyuda = new System.Windows.Forms.Button();
-            this.panelHerramientasMenuLateral = new System.Windows.Forms.Panel();
-            this.button18 = new System.Windows.Forms.Button();
-            this.botonHerramientas = new System.Windows.Forms.Button();
             this.botonEcualizador = new System.Windows.Forms.Button();
-            this.panelPlaylistMenuLateral = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
-            this.botonPlaylists = new System.Windows.Forms.Button();
             this.panelMedios = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -47,8 +41,6 @@
             this.panelPrincipal = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.panelHerramientasMenuLateral.SuspendLayout();
-            this.panelPlaylistMenuLateral.SuspendLayout();
             this.panelMedios.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -61,11 +53,7 @@
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.panel1.Controls.Add(this.botonAyuda);
-            this.panel1.Controls.Add(this.panelHerramientasMenuLateral);
-            this.panel1.Controls.Add(this.botonHerramientas);
             this.panel1.Controls.Add(this.botonEcualizador);
-            this.panel1.Controls.Add(this.panelPlaylistMenuLateral);
-            this.panel1.Controls.Add(this.botonPlaylists);
             this.panel1.Controls.Add(this.panelMedios);
             this.panel1.Controls.Add(this.botonMedia);
             this.panel1.Controls.Add(this.panelLogo);
@@ -83,7 +71,7 @@
             this.botonAyuda.ForeColor = System.Drawing.Color.Gainsboro;
             this.botonAyuda.Image = ((System.Drawing.Image)(resources.GetObject("botonAyuda.Image")));
             this.botonAyuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botonAyuda.Location = new System.Drawing.Point(0, 459);
+            this.botonAyuda.Location = new System.Drawing.Point(0, 276);
             this.botonAyuda.Name = "botonAyuda";
             this.botonAyuda.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.botonAyuda.Size = new System.Drawing.Size(250, 45);
@@ -94,54 +82,6 @@
             this.botonAyuda.UseVisualStyleBackColor = true;
             this.botonAyuda.Click += new System.EventHandler(this.botonAyuda_Click);
             // 
-            // panelHerramientasMenuLateral
-            // 
-            this.panelHerramientasMenuLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.panelHerramientasMenuLateral.Controls.Add(this.button18);
-            this.panelHerramientasMenuLateral.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHerramientasMenuLateral.Location = new System.Drawing.Point(0, 413);
-            this.panelHerramientasMenuLateral.Name = "panelHerramientasMenuLateral";
-            this.panelHerramientasMenuLateral.Size = new System.Drawing.Size(250, 46);
-            this.panelHerramientasMenuLateral.TabIndex = 8;
-            // 
-            // button18
-            // 
-            this.button18.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button18.FlatAppearance.BorderSize = 0;
-            this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button18.ForeColor = System.Drawing.Color.LightGray;
-            this.button18.Image = ((System.Drawing.Image)(resources.GetObject("button18.Image")));
-            this.button18.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button18.Location = new System.Drawing.Point(0, 0);
-            this.button18.Name = "button18";
-            this.button18.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.button18.Size = new System.Drawing.Size(250, 40);
-            this.button18.TabIndex = 0;
-            this.button18.Text = "  Opciones";
-            this.button18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button18.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button18.UseVisualStyleBackColor = true;
-            this.button18.Click += new System.EventHandler(this.button18_Click);
-            // 
-            // botonHerramientas
-            // 
-            this.botonHerramientas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.botonHerramientas.FlatAppearance.BorderSize = 0;
-            this.botonHerramientas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonHerramientas.ForeColor = System.Drawing.Color.Gainsboro;
-            this.botonHerramientas.Image = ((System.Drawing.Image)(resources.GetObject("botonHerramientas.Image")));
-            this.botonHerramientas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botonHerramientas.Location = new System.Drawing.Point(0, 368);
-            this.botonHerramientas.Name = "botonHerramientas";
-            this.botonHerramientas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.botonHerramientas.Size = new System.Drawing.Size(250, 45);
-            this.botonHerramientas.TabIndex = 7;
-            this.botonHerramientas.Text = "Herramientas";
-            this.botonHerramientas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botonHerramientas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.botonHerramientas.UseVisualStyleBackColor = true;
-            this.botonHerramientas.Click += new System.EventHandler(this.botonHerramientas_Click);
-            // 
             // botonEcualizador
             // 
             this.botonEcualizador.Dock = System.Windows.Forms.DockStyle.Top;
@@ -150,7 +90,7 @@
             this.botonEcualizador.ForeColor = System.Drawing.Color.Gainsboro;
             this.botonEcualizador.Image = ((System.Drawing.Image)(resources.GetObject("botonEcualizador.Image")));
             this.botonEcualizador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botonEcualizador.Location = new System.Drawing.Point(0, 323);
+            this.botonEcualizador.Location = new System.Drawing.Point(0, 231);
             this.botonEcualizador.Name = "botonEcualizador";
             this.botonEcualizador.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.botonEcualizador.Size = new System.Drawing.Size(250, 45);
@@ -160,55 +100,6 @@
             this.botonEcualizador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.botonEcualizador.UseVisualStyleBackColor = true;
             this.botonEcualizador.Click += new System.EventHandler(this.botonEcualizador_Click);
-            // 
-            // panelPlaylistMenuLateral
-            // 
-            this.panelPlaylistMenuLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.panelPlaylistMenuLateral.Controls.Add(this.button9);
-            this.panelPlaylistMenuLateral.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelPlaylistMenuLateral.Location = new System.Drawing.Point(0, 276);
-            this.panelPlaylistMenuLateral.Name = "panelPlaylistMenuLateral";
-            this.panelPlaylistMenuLateral.Size = new System.Drawing.Size(250, 47);
-            this.panelPlaylistMenuLateral.TabIndex = 4;
-            // 
-            // button9
-            // 
-            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.ForeColor = System.Drawing.Color.LightGray;
-            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(0, 0);
-            this.button9.Name = "button9";
-            this.button9.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.button9.Size = new System.Drawing.Size(250, 40);
-            this.button9.TabIndex = 0;
-            this.button9.Text = "  Añadir Playlist";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // botonPlaylists
-            // 
-            this.botonPlaylists.Dock = System.Windows.Forms.DockStyle.Top;
-            this.botonPlaylists.FlatAppearance.BorderSize = 0;
-            this.botonPlaylists.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonPlaylists.ForeColor = System.Drawing.Color.Gainsboro;
-            this.botonPlaylists.Image = ((System.Drawing.Image)(resources.GetObject("botonPlaylists.Image")));
-            this.botonPlaylists.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botonPlaylists.Location = new System.Drawing.Point(0, 231);
-            this.botonPlaylists.Name = "botonPlaylists";
-            this.botonPlaylists.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.botonPlaylists.Size = new System.Drawing.Size(250, 45);
-            this.botonPlaylists.TabIndex = 3;
-            this.botonPlaylists.Text = "Tus playlists";
-            this.botonPlaylists.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botonPlaylists.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.botonPlaylists.UseVisualStyleBackColor = true;
-            this.botonPlaylists.Click += new System.EventHandler(this.botonPlaylists_Click);
             // 
             // panelMedios
             // 
@@ -344,8 +235,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
-            this.panelHerramientasMenuLateral.ResumeLayout(false);
-            this.panelPlaylistMenuLateral.ResumeLayout(false);
             this.panelMedios.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -364,13 +253,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button botonMedia;
         private System.Windows.Forms.Button botonAyuda;
-        private System.Windows.Forms.Panel panelHerramientasMenuLateral;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button botonHerramientas;
         private System.Windows.Forms.Button botonEcualizador;
-        private System.Windows.Forms.Panel panelPlaylistMenuLateral;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button botonPlaylists;
         private System.Windows.Forms.Panel panelPrincipal;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;

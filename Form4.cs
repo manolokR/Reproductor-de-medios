@@ -16,7 +16,7 @@ namespace Reproductor_Medios
         public Form4()
         {
             InitializeComponent();
-        
+            trackBar2.Value = 50;
             axWindowsMediaPlayer1.uiMode = "none";
             slider.Height = 30;
         }
@@ -35,7 +35,7 @@ namespace Reproductor_Medios
         {
 
         }
-
+        bool reproduciendo = false;
         private void button3_Click(object sender, EventArgs e)
         {
             openFileDialog1.Title = "Elige el video que quieras :)";
@@ -43,7 +43,10 @@ namespace Reproductor_Medios
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 axWindowsMediaPlayer1.URL = openFileDialog1.FileName;
+                pictureBox9.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\pausemini.png");
+                reproduciendo = true;
             }
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -77,7 +80,7 @@ namespace Reproductor_Medios
             float x = Bar(valores_default);
             int y = (int)(slider.Height * bar_size);
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-            e.Graphics.FillRectangle(Brushes.WhiteSmoke, 0, y, slider.Width-7, y / 2);
+            e.Graphics.FillRectangle(Brushes.WhiteSmoke, 0, y, slider.Width, y / 2);
             e.Graphics.FillRectangle(Brushes.DarkRed, 0, y, x, slider.Height - 30);
             using (Pen pen = new Pen(Color.FromArgb(235,5, 75), 8)) {
 
@@ -124,7 +127,46 @@ namespace Reproductor_Medios
             mouse = false;
         }
 
-     
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.settings.volume = trackBar2.Value;
+            if (trackBar2.Value == 0)
+            {
+                pictureBox2.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\minimute.png");
+
+            }
+            else
+            {
+
+                pictureBox2.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\reduced-volume.png");
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+       
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+
+            if (!reproduciendo)
+            {
+                pictureBox9.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\pausemini.png");
+
+                axWindowsMediaPlayer1.Ctlcontrols.play();
+                reproduciendo = true;
+
+
+            }
+            else
+            {
+                pictureBox9.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\icon.png");
+                axWindowsMediaPlayer1.Ctlcontrols.pause();
+                reproduciendo = false;
+
+            }
+        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {

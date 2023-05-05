@@ -25,8 +25,7 @@ namespace Reproductor_Medios
         private void personalizarDisenio() {
         
             panelMedios.Visible = false;
-            panelHerramientasMenuLateral.Visible = false;
-            panelPlaylistMenuLateral.Visible = false;
+      
         }
 
         private void ocultarMenuLateral() {
@@ -37,19 +36,7 @@ namespace Reproductor_Medios
 
             }
 
-            if (panelHerramientasMenuLateral.Visible == true)
-            {
-
-                panelHerramientasMenuLateral.Visible = false;
-
-            }
-
-            if (panelPlaylistMenuLateral.Visible == true)
-            {
-
-                panelPlaylistMenuLateral.Visible = false;
-
-            }
+            
         }
 
         private void mostrarMenuLateral(Panel menuLateral) {
@@ -102,10 +89,7 @@ namespace Reproductor_Medios
             ocultarMenuLateral();
         }
 
-        private void botonPlaylists_Click(object sender, EventArgs e)
-        {
-            mostrarMenuLateral(panelPlaylistMenuLateral);
-        }
+       
 
         private void button9_Click(object sender, EventArgs e)
         {
@@ -127,10 +111,7 @@ namespace Reproductor_Medios
             ocultarMenuLateral();
         }
 
-        private void botonHerramientas_Click(object sender, EventArgs e)
-        {
-            mostrarMenuLateral(panelHerramientasMenuLateral);
-        }
+
 
         private void button18_Click(object sender, EventArgs e)
         {
@@ -154,7 +135,7 @@ namespace Reproductor_Medios
 
         private void botonAyuda_Click(object sender, EventArgs e)
         {
-            ocultarMenuLateral();
+            MessageBox.Show("Apruebanos, último aviso");
         }
 
 
