@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WMPLib;
 using System.Drawing.Drawing2D;
+using System.IO;
 namespace Reproductor_Medios
 {
     public partial class Form4 : Form
@@ -43,7 +44,9 @@ namespace Reproductor_Medios
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 axWindowsMediaPlayer1.URL = openFileDialog1.FileName;
-                pictureBox9.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\pausemini.png");
+                string basePath = Environment.CurrentDirectory;
+                string imagePath = Path.Combine(basePath, @"..\..\tutorial UI V icons\pausemini.png");
+                pictureBox9.Image = Image.FromFile(imagePath);
                 reproduciendo = true;
             }
 
@@ -132,13 +135,16 @@ namespace Reproductor_Medios
             axWindowsMediaPlayer1.settings.volume = trackBar2.Value;
             if (trackBar2.Value == 0)
             {
-                pictureBox2.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\minimute.png");
+                string basePath = Environment.CurrentDirectory;
+                string imagePath = Path.Combine(basePath, @"..\..\tutorial UI V icons\minimute.png");
+                pictureBox2.Image = Image.FromFile(imagePath);
 
             }
             else
             {
-
-                pictureBox2.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\reduced-volume.png");
+                string basePath = Environment.CurrentDirectory;
+                string imagePath = Path.Combine(basePath, @"..\..\tutorial UI V icons\reduced-volume.png");
+                pictureBox2.Image = Image.FromFile(imagePath);
             }
         }
 
@@ -152,7 +158,9 @@ namespace Reproductor_Medios
 
             if (!reproduciendo)
             {
-                pictureBox9.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\pausemini.png");
+                string basePath = Environment.CurrentDirectory;
+                string imagePath = Path.Combine(basePath, @"..\..\tutorial UI V icons\pausemini.png");
+                pictureBox9.Image = Image.FromFile(imagePath);
 
                 axWindowsMediaPlayer1.Ctlcontrols.play();
                 reproduciendo = true;
@@ -161,7 +169,11 @@ namespace Reproductor_Medios
             }
             else
             {
-                pictureBox9.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\icon.png");
+                string basePath = Environment.CurrentDirectory;
+
+                string imagePath = Path.Combine(basePath, @"..\..\tutorial UI V icons\icon.png");
+                pictureBox9.Image = Image.FromFile(imagePath);
+
                 axWindowsMediaPlayer1.Ctlcontrols.pause();
                 reproduciendo = false;
 

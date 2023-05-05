@@ -125,7 +125,11 @@ namespace Reproductor_Medios
           
             axWindowsMediaPlayer1.URL = paths[track_list.SelectedIndex];
             axWindowsMediaPlayer1.Ctlcontrols.play();
-            pictureBox1.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\pausemini.png");
+
+            string basePath = Environment.CurrentDirectory;
+            string imagePath = Path.Combine(basePath, (@"..\..\tutorial UI V icons\pausemini.png"));
+            pictureBox1.Image = Image.FromFile(imagePath);
+
             reproduciendo = true;
             try
             {
@@ -137,12 +141,14 @@ namespace Reproductor_Medios
                 }
                 else
                 {
-                    miniatura.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\musiquita.png"); // load a default picture
+                    imagePath = Path.Combine(basePath, @"..\..\tutorial UI V icons\musiquita.png"); // load a default picture
+                    miniatura.Image = Image.FromFile(imagePath);
                 }
             }
             catch
             {
-                miniatura.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\musiquita.png"); // load a default picture on error
+                imagePath = Path.Combine(basePath, @"..\..\Reproductor_Medios\tutorial UI V icons\musiquita.png"); // load a default picture on error
+                miniatura.Image = Image.FromFile(imagePath);
             }
             pictureBox2.Enabled = true;
         }
@@ -155,7 +161,11 @@ namespace Reproductor_Medios
         private void pictureBox6_Click(object sender, EventArgs e)
         {
             axWindowsMediaPlayer1.Ctlcontrols.stop();
-            pictureBox1.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\icon.png");
+
+            string basePath = Environment.CurrentDirectory;
+            string imagePath = Path.Combine(basePath, @"..\..\tutorial UI V icons\icon.png");
+            pictureBox1.Image = Image.FromFile(imagePath);
+
             reproduciendo = false;
 
         }
@@ -166,7 +176,10 @@ namespace Reproductor_Medios
            
             if (!reproduciendo )
             {
-                pictureBox1.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\pausemini.png");
+                string basePath = Environment.CurrentDirectory;
+                string imagePath = Path.Combine(basePath, @"..\..\tutorial UI V icons\pausemini.png");
+                pictureBox1.Image = Image.FromFile(imagePath);
+
                 axWindowsMediaPlayer1.URL = @listBox1.Text;
                 axWindowsMediaPlayer1.Ctlcontrols.play();
                 reproduciendo = true;
@@ -175,7 +188,10 @@ namespace Reproductor_Medios
             }
             else
             {
-                pictureBox1.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\icon.png");
+                string basePath = Environment.CurrentDirectory;
+                string imagePath = Path.Combine(basePath, @"..\..\tutorial UI V icons\icon.png");
+                pictureBox1.Image = Image.FromFile(imagePath);
+
                 axWindowsMediaPlayer1.Ctlcontrols.pause();
                 reproduciendo = false;
              
@@ -264,12 +280,15 @@ namespace Reproductor_Medios
             axWindowsMediaPlayer1.settings.volume = trackBar1.Value;
             if (trackBar1.Value == 0)
             {
-                botonVolumen.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\minimute.png");
+                string basePath = Environment.CurrentDirectory;
+                string imagePath = Path.Combine(basePath, @"..\..\tutorial UI V icons\minimute.png");
+                botonVolumen.Image = Image.FromFile(imagePath);
 
             }
             else {
-
-                botonVolumen.Image = Image.FromFile(@"C:\Users\Manuel\source\repos\Reproductor_Medios\tutorial UI V icons\reduced-volume.png");
+                string basePath = Environment.CurrentDirectory;
+                string imagePath = Path.Combine(basePath, @"..\..\tutorial UI V icons\reduced-volume.png");
+                botonVolumen.Image = Image.FromFile(imagePath);
             }
         }
 
@@ -306,7 +325,10 @@ namespace Reproductor_Medios
 
         private void Guardar_Click(object sender, EventArgs e)
         {
-            StreamWriter Guardar = new StreamWriter(@"C:\Users\Manuel\source\repos\Reproductor_Medios\Almacenamiento\Favoritos.txt");
+            string directorioProyecto = Directory.GetCurrentDirectory();
+            string rutaArchivo = Path.Combine(directorioProyecto, "../../Almacenamiento/Favoritos.txt");
+            StreamWriter Guardar = new StreamWriter(rutaArchivo);
+
             foreach (var item in listBox1.Items) { 
                
                 Guardar.WriteLine(item.ToString());
@@ -320,7 +342,9 @@ namespace Reproductor_Medios
 
         private void Cargar_Click(object sender, EventArgs e)
         {
-            using (StreamReader leer = new StreamReader(@"C:\Users\Manuel\source\repos\Reproductor_Medios\Almacenamiento\Favoritos.txt")) 
+            string rutaArchivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..","..","Almacenamiento", "Favoritos.txt");
+
+            using (StreamReader leer = new StreamReader(rutaArchivo)) 
             {
                 string linea;
                 while ((linea = leer.ReadLine()) != null) { 
