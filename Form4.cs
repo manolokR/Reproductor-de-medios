@@ -37,7 +37,7 @@ namespace Reproductor_Medios
 
         }
         bool reproduciendo = false;
-        private void button3_Click(object sender, EventArgs e)
+        private void cargarVideo_Click(object sender, EventArgs e)
         {
             openFileDialog1.Title = "Elige el video que quieras :)";
             openFileDialog1.Filter = "Archivos MP4|*.mp4";
@@ -46,23 +46,13 @@ namespace Reproductor_Medios
                 axWindowsMediaPlayer1.URL = openFileDialog1.FileName;
                 string basePath = Environment.CurrentDirectory;
                 string imagePath = Path.Combine(basePath, @"..\..\tutorial UI V icons\pausemini.png");
-                pictureBox9.Image = Image.FromFile(imagePath);
+                botonPlay.Image = Image.FromFile(imagePath);
                 reproduciendo = true;
             }
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsPlaying)
-            {
-                axWindowsMediaPlayer1.Ctlcontrols.pause();
-            }
-            else
-            {
-                axWindowsMediaPlayer1.Ctlcontrols.play();
-            }
-        }
+       
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -153,14 +143,14 @@ namespace Reproductor_Medios
 
         }
        
-        private void pictureBox9_Click(object sender, EventArgs e)
+        private void botonPlay_Click(object sender, EventArgs e)
         {
 
             if (!reproduciendo)
             {
                 string basePath = Environment.CurrentDirectory;
                 string imagePath = Path.Combine(basePath, @"..\..\tutorial UI V icons\pausemini.png");
-                pictureBox9.Image = Image.FromFile(imagePath);
+                botonPlay.Image = Image.FromFile(imagePath);
 
                 axWindowsMediaPlayer1.Ctlcontrols.play();
                 reproduciendo = true;
@@ -172,12 +162,17 @@ namespace Reproductor_Medios
                 string basePath = Environment.CurrentDirectory;
 
                 string imagePath = Path.Combine(basePath, @"..\..\tutorial UI V icons\icon.png");
-                pictureBox9.Image = Image.FromFile(imagePath);
+                botonPlay.Image = Image.FromFile(imagePath);
 
                 axWindowsMediaPlayer1.Ctlcontrols.pause();
                 reproduciendo = false;
 
             }
+        }
+
+        private void axWindowsMediaPlayer1_Enter_1(object sender, EventArgs e)
+        {
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)

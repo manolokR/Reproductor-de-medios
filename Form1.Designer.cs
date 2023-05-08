@@ -32,14 +32,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.botonAyuda = new System.Windows.Forms.Button();
             this.panelMedios = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.cargarVideo = new System.Windows.Forms.Button();
+            this.cargarAudio = new System.Windows.Forms.Button();
             this.botonMedia = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelPrincipal = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panelMedios.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -59,7 +59,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 793);
+            this.panel1.Size = new System.Drawing.Size(250, 785);
             this.panel1.TabIndex = 0;
             // 
             // botonAyuda
@@ -84,8 +84,8 @@
             // panelMedios
             // 
             this.panelMedios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.panelMedios.Controls.Add(this.button3);
-            this.panelMedios.Controls.Add(this.button2);
+            this.panelMedios.Controls.Add(this.cargarVideo);
+            this.panelMedios.Controls.Add(this.cargarAudio);
             this.panelMedios.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelMedios.Location = new System.Drawing.Point(0, 145);
             this.panelMedios.Name = "panelMedios";
@@ -93,45 +93,45 @@
             this.panelMedios.TabIndex = 2;
             this.panelMedios.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMedios_Paint);
             // 
-            // button3
+            // cargarVideo
             // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.LightGray;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 40);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(250, 40);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "  Cargar Video";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.cargarVideo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cargarVideo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cargarVideo.FlatAppearance.BorderSize = 0;
+            this.cargarVideo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cargarVideo.ForeColor = System.Drawing.Color.LightGray;
+            this.cargarVideo.Image = ((System.Drawing.Image)(resources.GetObject("cargarVideo.Image")));
+            this.cargarVideo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cargarVideo.Location = new System.Drawing.Point(0, 40);
+            this.cargarVideo.Name = "cargarVideo";
+            this.cargarVideo.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.cargarVideo.Size = new System.Drawing.Size(250, 40);
+            this.cargarVideo.TabIndex = 1;
+            this.cargarVideo.Text = "  Cargar Video";
+            this.cargarVideo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cargarVideo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.cargarVideo.UseVisualStyleBackColor = true;
+            this.cargarVideo.Click += new System.EventHandler(this.cargarVideo_Click);
             // 
-            // button2
+            // cargarAudio
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.LightGray;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(250, 40);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "  Cargar Audio";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.cargarAudio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cargarAudio.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cargarAudio.FlatAppearance.BorderSize = 0;
+            this.cargarAudio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cargarAudio.ForeColor = System.Drawing.Color.LightGray;
+            this.cargarAudio.Image = ((System.Drawing.Image)(resources.GetObject("cargarAudio.Image")));
+            this.cargarAudio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cargarAudio.Location = new System.Drawing.Point(0, 0);
+            this.cargarAudio.Name = "cargarAudio";
+            this.cargarAudio.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.cargarAudio.Size = new System.Drawing.Size(250, 40);
+            this.cargarAudio.TabIndex = 0;
+            this.cargarAudio.Text = "  Cargar Audio";
+            this.cargarAudio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cargarAudio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.cargarAudio.UseVisualStyleBackColor = true;
+            this.cargarAudio.Click += new System.EventHandler(this.cargarAudio_Click);
             // 
             // botonMedia
             // 
@@ -186,6 +186,21 @@
             this.panelPrincipal.TabIndex = 2;
             this.panelPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPrincipal_Paint);
             // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.SystemColors.Menu;
+            this.textBox1.Location = new System.Drawing.Point(251, 590);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(787, 178);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.Text = "Media Master\r\nExperimenta la música";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -201,27 +216,11 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.Menu;
-            this.textBox1.Location = new System.Drawing.Point(251, 590);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(787, 178);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "Media Master\r\nExperimenta la música";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // PanelLateral
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1334, 793);
+            this.ClientSize = new System.Drawing.Size(1332, 785);
             this.Controls.Add(this.panelPrincipal);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -247,8 +246,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Panel panelMedios;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button cargarVideo;
+        private System.Windows.Forms.Button cargarAudio;
         private System.Windows.Forms.Button botonMedia;
         private System.Windows.Forms.Button botonAyuda;
         private System.Windows.Forms.Panel panelPrincipal;

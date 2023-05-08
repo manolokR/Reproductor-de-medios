@@ -35,7 +35,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.trackBar2 = new System.Windows.Forms.TrackBar();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.botonPlay = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
@@ -44,13 +44,13 @@
             this.lbl_start = new System.Windows.Forms.Label();
             this.slider = new System.Windows.Forms.PictureBox();
             this.botonCerrar = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.cargarVideo = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.botonPlay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
@@ -69,20 +69,21 @@
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.trackBar2);
             this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.pictureBox9);
+            this.panel1.Controls.Add(this.botonPlay);
             this.panel1.Controls.Add(this.pictureBox11);
-            this.panel1.Location = new System.Drawing.Point(0, 422);
+            this.panel1.Location = new System.Drawing.Point(0, 519);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.MaximumSize = new System.Drawing.Size(668, 100);
+            this.panel1.MaximumSize = new System.Drawing.Size(891, 123);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(668, 100);
+            this.panel1.Size = new System.Drawing.Size(891, 123);
             this.panel1.TabIndex = 29;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(295, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(393, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(24, 24);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -96,10 +97,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.trackBar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.trackBar2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.trackBar2.Location = new System.Drawing.Point(339, 3);
+            this.trackBar2.Location = new System.Drawing.Point(452, 4);
+            this.trackBar2.Margin = new System.Windows.Forms.Padding(4);
             this.trackBar2.Maximum = 100;
             this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Size = new System.Drawing.Size(298, 45);
+            this.trackBar2.Size = new System.Drawing.Size(397, 56);
             this.trackBar2.TabIndex = 36;
             this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
             // 
@@ -107,30 +109,33 @@
             // 
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(132, 3);
+            this.pictureBox3.Location = new System.Drawing.Point(176, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(24, 24);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox3.TabIndex = 34;
             this.pictureBox3.TabStop = false;
             // 
-            // pictureBox9
+            // botonPlay
             // 
-            this.pictureBox9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(162, 3);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(32, 27);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 29;
-            this.pictureBox9.TabStop = false;
-            this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
+            this.botonPlay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.botonPlay.Image = ((System.Drawing.Image)(resources.GetObject("botonPlay.Image")));
+            this.botonPlay.Location = new System.Drawing.Point(216, 4);
+            this.botonPlay.Margin = new System.Windows.Forms.Padding(4);
+            this.botonPlay.Name = "botonPlay";
+            this.botonPlay.Size = new System.Drawing.Size(43, 33);
+            this.botonPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.botonPlay.TabIndex = 29;
+            this.botonPlay.TabStop = false;
+            this.botonPlay.Click += new System.EventHandler(this.botonPlay_Click);
             // 
             // pictureBox11
             // 
             this.pictureBox11.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(200, 3);
+            this.pictureBox11.Location = new System.Drawing.Point(267, 4);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(24, 24);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -142,8 +147,9 @@
             this.panel2.Controls.Add(this.axWindowsMediaPlayer1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(668, 343);
+            this.panel2.Size = new System.Drawing.Size(891, 422);
             this.panel2.TabIndex = 52;
             // 
             // axWindowsMediaPlayer1
@@ -151,10 +157,12 @@
             this.axWindowsMediaPlayer1.Dock = System.Windows.Forms.DockStyle.Top;
             this.axWindowsMediaPlayer1.Enabled = true;
             this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(0, 0);
+            this.axWindowsMediaPlayer1.Margin = new System.Windows.Forms.Padding(4);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(668, 343);
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(891, 343);
             this.axWindowsMediaPlayer1.TabIndex = 49;
+            this.axWindowsMediaPlayer1.Enter += new System.EventHandler(this.axWindowsMediaPlayer1_Enter_1);
             // 
             // panel3
             // 
@@ -164,11 +172,11 @@
             this.panel3.Controls.Add(this.lbl_start);
             this.panel3.Controls.Add(this.slider);
             this.panel3.Controls.Add(this.botonCerrar);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Location = new System.Drawing.Point(0, 345);
+            this.panel3.Controls.Add(this.cargarVideo);
+            this.panel3.Location = new System.Drawing.Point(0, 425);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(668, 77);
+            this.panel3.Size = new System.Drawing.Size(891, 95);
             this.panel3.TabIndex = 53;
             // 
             // lbl_end
@@ -178,10 +186,9 @@
             this.lbl_end.AutoSize = true;
             this.lbl_end.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_end.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbl_end.Location = new System.Drawing.Point(496, 2);
-            this.lbl_end.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_end.Location = new System.Drawing.Point(661, 2);
             this.lbl_end.Name = "lbl_end";
-            this.lbl_end.Size = new System.Drawing.Size(49, 21);
+            this.lbl_end.Size = new System.Drawing.Size(60, 28);
             this.lbl_end.TabIndex = 59;
             this.lbl_end.Text = "00:00";
             // 
@@ -192,10 +199,9 @@
             this.lbl_start.AutoSize = true;
             this.lbl_start.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_start.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbl_start.Location = new System.Drawing.Point(127, 2);
-            this.lbl_start.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_start.Location = new System.Drawing.Point(169, 2);
             this.lbl_start.Name = "lbl_start";
-            this.lbl_start.Size = new System.Drawing.Size(49, 21);
+            this.lbl_start.Size = new System.Drawing.Size(60, 28);
             this.lbl_start.TabIndex = 58;
             this.lbl_start.Text = "00:00";
             // 
@@ -203,10 +209,10 @@
             // 
             this.slider.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.slider.Location = new System.Drawing.Point(131, 40);
-            this.slider.Margin = new System.Windows.Forms.Padding(2);
+            this.slider.Location = new System.Drawing.Point(175, 49);
+            this.slider.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.slider.Name = "slider";
-            this.slider.Size = new System.Drawing.Size(414, 24);
+            this.slider.Size = new System.Drawing.Size(552, 30);
             this.slider.TabIndex = 57;
             this.slider.TabStop = false;
             this.slider.Paint += new System.Windows.Forms.PaintEventHandler(this.slider_Paint);
@@ -220,28 +226,30 @@
             this.botonCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.botonCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botonCerrar.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.botonCerrar.Location = new System.Drawing.Point(3, 30);
+            this.botonCerrar.Location = new System.Drawing.Point(4, 37);
+            this.botonCerrar.Margin = new System.Windows.Forms.Padding(4);
             this.botonCerrar.Name = "botonCerrar";
-            this.botonCerrar.Size = new System.Drawing.Size(97, 34);
+            this.botonCerrar.Size = new System.Drawing.Size(129, 42);
             this.botonCerrar.TabIndex = 56;
             this.botonCerrar.Text = "Cerrar";
             this.botonCerrar.UseVisualStyleBackColor = false;
             this.botonCerrar.Click += new System.EventHandler(this.botonCerrar_Click);
             // 
-            // button3
+            // cargarVideo
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(5)))), ((int)(((byte)(75)))));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.button3.Location = new System.Drawing.Point(570, 30);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(95, 34);
-            this.button3.TabIndex = 55;
-            this.button3.Text = "Cargar";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.cargarVideo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cargarVideo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(5)))), ((int)(((byte)(75)))));
+            this.cargarVideo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cargarVideo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cargarVideo.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.cargarVideo.Location = new System.Drawing.Point(760, 37);
+            this.cargarVideo.Margin = new System.Windows.Forms.Padding(4);
+            this.cargarVideo.Name = "cargarVideo";
+            this.cargarVideo.Size = new System.Drawing.Size(127, 42);
+            this.cargarVideo.TabIndex = 55;
+            this.cargarVideo.Text = "Cargar";
+            this.cargarVideo.UseVisualStyleBackColor = false;
+            this.cargarVideo.Click += new System.EventHandler(this.cargarVideo_Click);
             // 
             // timer1
             // 
@@ -250,14 +258,15 @@
             // 
             // Form4
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(668, 522);
+            this.ClientSize = new System.Drawing.Size(891, 642);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.MinimumSize = new System.Drawing.Size(684, 561);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(906, 680);
             this.Name = "Form4";
             this.Text = "Form4";
             this.Load += new System.EventHandler(this.Form4_Load);
@@ -266,7 +275,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.botonPlay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
@@ -287,11 +296,11 @@
         private System.Windows.Forms.Label lbl_start;
         private System.Windows.Forms.PictureBox slider;
         private System.Windows.Forms.Button botonCerrar;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button cargarVideo;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TrackBar trackBar2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox botonPlay;
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.Timer timer1;
     }

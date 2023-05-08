@@ -33,7 +33,7 @@ namespace Reproductor_Medios
         }
         String[] paths, files;
         String urlSonido;
-        private void button1_Click(object sender, EventArgs e)
+        private void cargarArchivo_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Multiselect = true;
@@ -128,7 +128,7 @@ namespace Reproductor_Medios
 
             string basePath = Environment.CurrentDirectory;
             string imagePath = Path.Combine(basePath, (@"..\..\tutorial UI V icons\pausemini.png"));
-            pictureBox1.Image = Image.FromFile(imagePath);
+            botonPlay.Image = Image.FromFile(imagePath);
 
             reproduciendo = true;
             try
@@ -150,7 +150,7 @@ namespace Reproductor_Medios
                 imagePath = Path.Combine(basePath, @"..\..\Reproductor_Medios\tutorial UI V icons\musiquita.png"); // load a default picture on error
                 miniatura.Image = Image.FromFile(imagePath);
             }
-            pictureBox2.Enabled = true;
+            favoritos.Enabled = true;
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -158,27 +158,27 @@ namespace Reproductor_Medios
 
         }
 
-        private void pictureBox6_Click(object sender, EventArgs e)
+        private void botonStop_Click(object sender, EventArgs e)
         {
             axWindowsMediaPlayer1.Ctlcontrols.stop();
 
             string basePath = Environment.CurrentDirectory;
             string imagePath = Path.Combine(basePath, @"..\..\tutorial UI V icons\icon.png");
-            pictureBox1.Image = Image.FromFile(imagePath);
+            botonPlay.Image = Image.FromFile(imagePath);
 
             reproduciendo = false;
 
         }
 
         
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void botonPlay_Click(object sender, EventArgs e)
         {
            
             if (!reproduciendo )
             {
                 string basePath = Environment.CurrentDirectory;
                 string imagePath = Path.Combine(basePath, @"..\..\tutorial UI V icons\pausemini.png");
-                pictureBox1.Image = Image.FromFile(imagePath);
+                botonPlay.Image = Image.FromFile(imagePath);
 
                 axWindowsMediaPlayer1.URL = @listBox1.Text;
                 axWindowsMediaPlayer1.Ctlcontrols.play();
@@ -190,7 +190,7 @@ namespace Reproductor_Medios
             {
                 string basePath = Environment.CurrentDirectory;
                 string imagePath = Path.Combine(basePath, @"..\..\tutorial UI V icons\icon.png");
-                pictureBox1.Image = Image.FromFile(imagePath);
+                botonPlay.Image = Image.FromFile(imagePath);
 
                 axWindowsMediaPlayer1.Ctlcontrols.pause();
                 reproduciendo = false;
@@ -258,7 +258,7 @@ namespace Reproductor_Medios
 
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
+        private void botonSiguiente_Click(object sender, EventArgs e)
         {
             if (track_list.SelectedIndex<track_list.Items.Count - 1){
 
@@ -266,7 +266,7 @@ namespace Reproductor_Medios
             }
         }
 
-        private void pictureBox8_Click(object sender, EventArgs e)
+        private void botonAnterior_Click(object sender, EventArgs e)
         {
             if (track_list.SelectedIndex >0)
             {
@@ -302,9 +302,9 @@ namespace Reproductor_Medios
 
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void favoritos_Click(object sender, EventArgs e)
         {
-            pictureBox2.Enabled = false;
+            favoritos.Enabled = false;
             listBox1.Items.Add(track_list.Text);
             
 
@@ -380,6 +380,11 @@ namespace Reproductor_Medios
         }
 
         private void axWindowsMediaPlayer1_Enter_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void axWindowsMediaPlayer1_Enter_3(object sender, EventArgs e)
         {
 
         }

@@ -13,30 +13,32 @@ namespace Reproductor_Medios
     public partial class PanelLateral : Form
     {
 
-        private Form2 form2Instance;
-        
+
         public PanelLateral()
         {
-            form2Instance = new Form2();
+
             InitializeComponent();
             personalizarDisenio();
         }
 
-        private void personalizarDisenio() {
-        
+        private void personalizarDisenio()
+        {
+
             panelMedios.Visible = false;
-      
+
         }
 
-        private void ocultarMenuLateral() {
+        private void ocultarMenuLateral()
+        {
 
-            if (panelMedios.Visible == true) {
+            if (panelMedios.Visible == true)
+            {
 
                 panelMedios.Visible = false;
 
             }
 
-            
+
         }
 
         private void mostrarMenuLateral(Panel menuLateral)
@@ -68,72 +70,22 @@ namespace Reproductor_Medios
             mostrarMenuLateral(panelMedios);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void cargarAudio_Click(object sender, EventArgs e)
         {
             abrirpanelPrincipal(new Form2());
 
             ocultarMenuLateral();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void cargarVideo_Click(object sender, EventArgs e)
         {
             abrirpanelPrincipal(new Form4());
             ocultarMenuLateral();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            ocultarMenuLateral();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            ocultarMenuLateral();
-        }
-
-       
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            ocultarMenuLateral();
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            ocultarMenuLateral();
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            ocultarMenuLateral();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            ocultarMenuLateral();
-        }
 
 
 
-        private void button18_Click(object sender, EventArgs e)
-        {
-            ocultarMenuLateral();
-        }
-
-        private void button17_Click(object sender, EventArgs e)
-        {
-            ocultarMenuLateral();
-        }
-
-        private void button16_Click(object sender, EventArgs e)
-        {
-            ocultarMenuLateral();
-        }
-
-        private void button15_Click(object sender, EventArgs e)
-        {
-            ocultarMenuLateral();
-        }
 
         private void botonAyuda_Click(object sender, EventArgs e)
         {
@@ -143,10 +95,12 @@ namespace Reproductor_Medios
 
         private Form FormularioActivo = null;
 
-        private void abrirpanelPrincipal(Form formPrincipal) {
+        private void abrirpanelPrincipal(Form formPrincipal)
+        {
 
-            if (FormularioActivo != null) { 
-            
+            if (FormularioActivo != null)
+            {
+
                 FormularioActivo.Close();
             }
             FormularioActivo = formPrincipal;
@@ -161,12 +115,7 @@ namespace Reproductor_Medios
 
         }
 
-        private void botonEcualizador_Click(object sender, EventArgs e)
-        {
-           
-
-            ocultarMenuLateral();
-        }
+  
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -175,8 +124,8 @@ namespace Reproductor_Medios
 
         private bool estaReproduciendo = false;
 
-        
-       
+
+
 
         private void panelMedios_Paint(object sender, PaintEventArgs e)
         {
@@ -184,11 +133,6 @@ namespace Reproductor_Medios
         }
 
         private void panelPrincipal_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

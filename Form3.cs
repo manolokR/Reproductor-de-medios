@@ -36,5 +36,10 @@ namespace Reproductor_Medios
         {
 
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
